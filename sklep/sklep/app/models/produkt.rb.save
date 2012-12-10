@@ -1,0 +1,14 @@
+class Produkt < ActiveRecord::Base
+  validates :cena, :opis, :img_url, :presence => true
+  validates :cena, :numericality => {greater_than_or_equal_to => 0.01}
+  validates :nazwa, :uniqueness => true
+  validates :img_url, :format => {
+	:with => %r{\.(gif|jpg|png)$}i,
+	:message => 'Zle rozszerzenie! -dopuszczalne to gif,jpg lub png' 
+  }
+1.
+ 1
+gw
+ g
+
+end

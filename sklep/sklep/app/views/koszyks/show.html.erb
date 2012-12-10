@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+<h2>Koszyk</h2>
+<ul>
+<% @koszyk.polaczenies.each do |item| %>
+<li><%= item.produkt.nazwa %></li>
+<% end %>
+</ul>
+
+<%= link_to 'Edit', edit_koszyk_path(@koszyk) %> |
+<%= link_to 'Back', koszyks_path %>

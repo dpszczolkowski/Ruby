@@ -1,0 +1,16 @@
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+
+<h1>Sklepowa pułka</h1>
+<% @produkts.each do |produkt| %>
+	<div class="entry">
+		<%= image_tag(produkt.img_url) %>
+		<h3><%= produkt.nazwa %></h3>
+		<%= sanitize(produkt.opis) %>
+		<div class="ceny">
+			<span class="cena"><%= sprintf("%0.02f PLN",produkt.cena) %></span>
+			<%= button_to 'Dodaj do koszyka', polaczenies_path(:product_id => produkt) %>
+		</div>
+	</div>
+<% end %> 

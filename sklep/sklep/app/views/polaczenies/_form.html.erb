@@ -1,0 +1,25 @@
+<%= form_for(@polaczeny) do |f| %>
+  <% if @polaczeny.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@polaczeny.errors.count, "error") %> prohibited this polaczeny from being saved:</h2>
+
+      <ul>
+      <% @polaczeny.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :produkt_id %><br />
+    <%= f.number_field :produkt_id %>
+  </div>
+  <div class="field">
+    <%= f.label :koszyk_id %><br />
+    <%= f.number_field :koszyk_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
