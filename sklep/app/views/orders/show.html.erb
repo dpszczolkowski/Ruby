@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Nazwa:</b>
+  <%= @order.name %>
+</p>
+
+<p>
+  <b>Adres:</b>
+  <%= @order.address %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @order.email %>
+</p>
+
+<p>
+  <b>Rodzaj platnosci:</b>
+  <%= @order.pay_type %>
+</p>
+
+
+<%= link_to 'Edytuj', edit_order_path(@order) %> |
+<%= link_to 'Cofnij', orders_path %>

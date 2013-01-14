@@ -1,0 +1,11 @@
+<h2>Koszyk</h2>
+<table>
+	<%= render @cart %>
+
+<tr class="total_line">
+		<td colspan="2">Calkowity koszt</td>
+	<td class="total_cell"><%= number_to_currency(@cart.total_price) %></td>
+</tr>
+</table>
+
+<%= button_to 'Wyczysc koszyk', @cart, :method => :delete, :confirm=> 'Jestes pewien?' %>

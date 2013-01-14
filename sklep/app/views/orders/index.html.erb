@@ -1,0 +1,29 @@
+<h1>Lista zamowien</h1>
+
+<table>
+  <tr>
+    <th>Imie</th>
+    <th>Adres</th>
+    <th>Email</th>
+    <th>Rodzaj platnosci</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @orders.each do |order| %>
+  <tr>
+    <td><%= order.name %></td>
+    <td><%= order.address %></td>
+    <td><%= order.email %></td>
+    <td><%= order.pay_type %></td>
+    <td><%= link_to 'Pokaz', order %></td>
+    <td><%= link_to 'Edytuj', edit_order_path(order) %></td>
+    <td><%= link_to 'Usun', order, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Nowe zamowienie', new_order_path %>
